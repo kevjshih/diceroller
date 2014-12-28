@@ -6,9 +6,13 @@
   int evaluate_dice(int num_dice, int max) {
     int result = 0;
     int i = 0;
+    printf("%dd rolls: ", max);
     for(i; i < num_dice; ++i) {
-      result += rand() %max +1;
+      int val = rand() %max +1;
+      printf("%d ", val);
+      result += val;
     }
+    printf("\n");
     return result;
   }
 
@@ -21,7 +25,7 @@ input:		/* empty string */
 		;
 
 line:		NEWLINE
-		|  expr NEWLINE    { printf("\t%d\n", $1); }
+		|  expr NEWLINE    { printf("sum: \t%d\n", $1); }
 		;
 
 expr:		expr PLUS term     { $$ = $1 + $3; }
