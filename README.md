@@ -29,4 +29,4 @@ d6 rolls: 4
 d5 rolls: 2 5 3
 sum: 	  15
 ```
-Where the first of every 3 lines is the user input.
+Where the first of every 3 lines is the user input. The parser currently supports + and - operators only.
