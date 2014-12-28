@@ -2,12 +2,10 @@
 #define YYSTYPE int
 #include <stdlib.h>
 #include <stdio.h>
-#include <time.h>
 
   int evaluate_dice(int num_dice, int max) {
     int result = 0;
     int i = 0;
-    srand(time(NULL));
     for(i; i < num_dice; ++i) {
       result += rand() %max +1;
     }
@@ -35,13 +33,14 @@ term: 		NUMBER DICE NUMBER { $$ = evaluate_dice($1, $3);}
 		;
 %%
 #include<stdio.h>
-
+#include <time.h>
 int yyerror(char *s) {
     printf("%s\n", s);
     return(0);
 }
 
 int main() {
+    srand(time(NULL));
     yyparse();
     exit(0);
 }
