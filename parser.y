@@ -6,7 +6,7 @@
   int evaluate_dice(int num_dice, int max) {
     int result = 0;
     int i = 0;
-    printf("%dd rolls: ", max);
+    printf("d%d rolls: ", max);
     for(i; i < num_dice; ++i) {
       int val = rand() %max +1;
       printf("%d ", val);
